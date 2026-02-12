@@ -1,0 +1,138 @@
+/* Reset default spacing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Full background */
+body {
+  height: 100vh;
+  background-color: #FF90BB;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Center box */
+.card {
+  background-color: #FFFDF1;
+  padding: 40px 60px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* Text */
+.card h1 {
+  color: rgb(235, 8, 8);
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: rgb(235, 8, 8);
+  font-size: 18px;
+}
+.cat {
+  margin-bottom: 10px;
+}
+
+.cat-gif {
+  width: 250px;       /* adjust size as needed */
+  animation: beg 1.2s infinite ease-in-out;
+}
+
+/* Bounce animation for GIF */
+@keyframes beg {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(-5deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+.hearts {
+  position: relative;
+  width: 100%;
+  height: 0;
+}
+
+.hearts::after,
+.hearts::before,
+.heart1,
+.heart2,
+.heart3 {
+  content: "💖";
+  position: absolute;
+  font-size: 24px;
+  opacity: 0.8;
+  animation: float 2s infinite;
+}
+
+.heart1 {
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.heart2 {
+  left: 50%;
+  animation-delay: 0.5s;
+}
+
+.heart3 {
+  left: 80%;
+  animation-delay: 1s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(0.8);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-50px) scale(1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-100px) scale(0.8);
+    opacity: 0;
+  }
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+.buttons button {
+  padding: 10px 25px;
+  font-size: 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: transform 0.2s;
+}
+
+#yesBtn {
+  background-color: #FF52A0;
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+#noBtn {
+  background-color: #FF52A0;
+  color: #fff;
+  border: 2px solid #fff;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+/* Hover effect */
+.buttons button:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s;
+}
+
+@keyframes floatConfetti {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(-150px) rotate(360deg); opacity: 0; }
+}
